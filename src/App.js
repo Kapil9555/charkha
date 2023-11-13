@@ -84,7 +84,7 @@ function App() {
                     className="print-only-button hide-on-print"
                     onClick={handleSavePdf}
                     sx={{
-                      display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, // Hide on print
+                      display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' },
                       color: "white",
                       bgcolor: "black",
                       "&:hover": { bgcolor: "black" },
@@ -114,7 +114,7 @@ function App() {
                       </Typography>
                       </Grid>
                       <Grid item xs={12} sm={12} md={6} lg={6}>
-                      <InputBase placeholder='Type here...' name='name' value={data.name} fullWidth sx={{borderRadius:"5px",fontSize: { lg: '13px', md: '13px', sm: '13px', xs: '12px' },border:"1px solid #e0e0e0", height: "40px", ml: '3px', pt: "4px" }} onChange={handleSetValue} />
+                      <InputBase placeholder='Type here...' name='name' value={data.name} fullWidth sx={{borderRadius:"5px",pl:"4px",border:screen==true?"1px solid #e0e0e0":"",fontSize: { lg: '13px', md: '13px', sm: '13px', xs: '12px' },border:"1px solid #e0e0e0", height: "40px", ml: '3px', pt: "4px" }} onChange={handleSetValue} />
                       </Grid>
 
                       <Grid item xs={12} sm={12} md={6} lg={6} sx={{mt:"10px"}}>
@@ -123,7 +123,7 @@ function App() {
                       </Typography>
                       </Grid>
                       <Grid item xs={12} sm={12} md={6} lg={6} sx={{mt:{lg:"10px",md:"10px",sm:"0px",xs:"0px"}}}>
-                      <InputBase placeholder="Type here..." name='district' value={data.district} fullWidth sx={{borderRadius:"5px",fontSize: { lg: '13px', md: '13px', sm: '13px', xs: '12px' },border:"1px solid #e0e0e0", height: "40px", ml: '3px', pt: "4px" }} onChange={handleSetValue} />
+                      <InputBase placeholder="Type here..." name='district' value={data.district} fullWidth sx={{borderRadius:"5px",pl:"4px",border:screen?"1px solid #e0e0e0":"",fontSize: { lg: '13px', md: '13px', sm: '13px', xs: '12px' },border:"1px solid #e0e0e0", height: "40px", ml: '3px', pt: "4px" }} onChange={handleSetValue} />
                       </Grid>
 
                 
@@ -149,7 +149,7 @@ function App() {
                     <Grid item xs={9} sm={9} md={7.2} letterSpacing={.2} sx={{ }}>
                       <Box sx={{ mt: { lg: "27px", md: "25px", sm: "25px", xs: "13px" },display:"flex",alignItems:"center" }}>
                         <Typography><AddIcCallIcon sx={{mr:{lg:"10px",md:"10px",sm:"5px",xs:"3px"},mt:"3px",fontSize:{lg:"30px",md:"30px",sm:"20px",xs:"20px"}}}/></Typography>
-                        <InputBase placeholder='Type here...' style={{border:"1px solid #e0e0e0"}} type='number' name='mobile' value={data.mobile} onChange={handleSetValue} sx={{ bgcolor: "white", fontSize: { lg: '13px', md: '13px', sm: '13px', xs: '12px' }, pl: "3px",borderRadius:"5px" }} fullWidth />
+                        <InputBase placeholder='Type here...' style={{border:screen?"1px solid #e0e0e0":"",pl:"4px"}} type='number' name='mobile' value={data.mobile} onChange={handleSetValue} sx={{ bgcolor: "white", fontSize: { lg: '13px', md: '13px', sm: '13px', xs: '12px' }, pl: "3px",borderRadius:"5px" }} fullWidth />
                       </Box>
                     </Grid>
 
