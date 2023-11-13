@@ -55,9 +55,22 @@ function App() {
           <Grid item xs={12} sm={11} md={10} lg={7} >
            <Paper elevation={3}>
            <Grid container sx={{ zIndex: 9999 }}>
-              <Grid item xs={5} sx={{ backgroundImage: `url(${charkha})`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+           <Grid item xs={5} sx={{ backgroundImage: `url(${charkha})`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <Box sx={{ display: screen ? "flex" : "none", justifyContent: "space-around", alignItems: "center", height: { lg: "65px", md: "60px", sm: "50px", xs: "40px" } }}>
-                  <Button className="print-only-button hide-on-print" sx={{color: 'white',bgcolor: 'black','&:hover': {bgcolor: 'black',},border: '1.5px solid gray',borderRadius: '20px',whiteSpace: 'nowrap',fontSize: {xs: '7px',sm: '8px',md: '11px',lg: '12px'},position: "relative"}}>
+                  <Button
+                    className="print-only-button hide-on-print"
+                    sx={{
+                      display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, // Hide on print
+                      color: 'white',
+                      bgcolor: 'black',
+                      '&:hover': { bgcolor: 'black' },
+                      border: '1.5px solid gray',
+                      borderRadius: '20px',
+                      whiteSpace: 'nowrap',
+                      fontSize: { xs: '7px', sm: '8px', md: '11px', lg: '12px' },
+                      position: "relative"
+                    }}
+                  >
                     <input
                       type="file"
                       accept="image/*"
@@ -67,8 +80,22 @@ function App() {
                     Upload Image
                   </Button>
 
-
-                  <Button className="print-only-button hide-on-print" onClick={handleSavePdf} sx={{ color: "white", bgcolor: "black", "&:hover": { bgcolor: "black" }, border: "1.5px solid gray", borderRadius: "20px", whiteSpace: "nowrap", fontSize: { xs: "7px", sm: "8px", md: "11px", lg: "12px" } }}>Print pdf</Button>
+                  <Button
+                    className="print-only-button hide-on-print"
+                    onClick={handleSavePdf}
+                    sx={{
+                      display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, // Hide on print
+                      color: "white",
+                      bgcolor: "black",
+                      "&:hover": { bgcolor: "black" },
+                      border: "1.5px solid gray",
+                      borderRadius: "20px",
+                      whiteSpace: "nowrap",
+                      fontSize: { xs: "7px", sm: "8px", md: "11px", lg: "12px" }
+                    }}
+                  >
+                    Print pdf
+                  </Button>
                 </Box>
               </Grid>
             
