@@ -6,7 +6,7 @@ import imgdata from './assests/redbg.png';
 import sign from './assests/signimage.png';
 import './print-styles.css';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
-import vasu from './assests/vasu.jpeg'
+import vasu from './assests/vasu-removebg-preview_prev_ui.png'
 
 function App() {
   const [val1, setVal1] = useState(() => Math.floor(1000 + Math.random() * 9000));
@@ -103,16 +103,14 @@ function App() {
                   </Button>
                 </Box>
 
-                <Box sx={{height:{lg:"50%",md:"50%",sm:"40%",xs:"40%"}}}>
+                <Box sx={{height:{lg:"50%",md:"50%",sm:"40%",xs:"40%"},mt:"15px"}}>
                    <Box sx={{height:"100%"}}>
                      <img src={charkha} height={"100%"} width={"100%"}/>
                    </Box>
                 </Box>
-                <Box sx={{mt:"10px",display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"center",p:"5px"}}>
-                   <Typography align='center' sx={{fontFamily:"italic",fontSize:{lg:"20px",md:"20px",sm:"17px",xs:"11px"}}}>
-                     Vasudhaiva Kutumbakam
-                   </Typography>
-                   <Box sx={{height:{lg:"80px",md:"80px",sm:"50px",xs:"50px"},width:{lg:"200px",md:"200px",sm:"90px",xs:"90px"},mt:"10px"}}>
+                <Box sx={{mt:{lg:"20px",md:"",sm:"15px",xs:""},display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"center",p:"5px"}}>
+                   
+                   <Box sx={{height:{lg:"130px",md:"130px",sm:"100px",xs:"100px"},width:{lg:"300px",md:"300px",sm:"200px",xs:"150px"},mt:"10px"}}>
                     <img src={vasu} style={{height:"100%",width:"100%"}}/>
                    </Box>
                 </Box>
@@ -163,7 +161,7 @@ function App() {
                   </Grid>
 
 
-                  <Grid container sx={{mt:{lg:"10px",md:"10px",sm:"7px",xs:"7px"}}}>
+                  <Grid container sx={{mt:{lg:"20px",md:"15px",sm:"7px",xs:"7px"}}}>
 
                     <Grid item xs={12} sm={12} md={8} lg={8} sx={{  zIndex: 999999 }}>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
