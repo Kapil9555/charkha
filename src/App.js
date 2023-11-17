@@ -32,9 +32,16 @@ function App() {
   }
 
   const handleSavePdf = () => {
-    window.print()
-    setScreen(true)
-  }
+
+    const firstBox = document.querySelector('.first');
+    if (firstBox) {
+      firstBox.style.display = 'none';
+    }
+
+    window.print();
+    setScreen(true);
+    window.location.reload()
+  };
 
   useEffect(() => {
     // Save the random numbers in localStorage
@@ -50,11 +57,11 @@ function App() {
     <Container disableGutters maxWidth={'xl'}>
 
       <Grid container sx={{ justifyContent: "center", alignItems: "center", height: "100vh", p: "5px" }}>
-        <Grid item xs={12} sm={11} md={10} lg={8} >
+        <Grid item xs={12} sm={11} md={10} lg={8} sx={{}}>
           <Paper elevation={3}>
             <Grid container sx={{ zIndex: 9999 }}>
-              <Grid item xs={5} sx={{backgroundRepeat: "no-repeat", backgroundSize: "100% 100%",borderRight:"1px solid #eeeeee" }}>
-                <Box sx={{ display: screen ? "flex" : "none", justifyContent: "space-around", alignItems: "center", height: { lg: "65px", md: "60px", sm: "50px", xs: "40px" } }}>
+              <Grid item xs={5} sx={{backgroundRepeat: "no-repeat", backgroundSize: "100% 100%",borderRight:"1px solid #eeeeee",height:"fit-content" }}>
+                <Box className="first" sx={{ display: screen ? "flex" : "none", justifyContent: "space-around",mb:{lg:"15px",md:"15px",sm:"8px",xs:"3px"}, alignItems: "center", height: { lg: "65px", md: "60px", sm: "50px", xs: "40px" } }}>
                   <Button
                     className="print-only-button hide-on-print"
                     sx={{
@@ -95,7 +102,7 @@ function App() {
                       fontSize: { xs: "7px", sm: "8px", md: "11px", lg: "12px" },
                       position: "relative",
                       '@media print': {
-                        display: 'none', // Hide when printing
+                        display: 'none'
                       }
                     }}
                   >
@@ -103,14 +110,14 @@ function App() {
                   </Button>
                 </Box>
 
-                <Box sx={{height:{lg:"50%",md:"50%",sm:"40%",xs:"40%"},mt:"15px"}}>
+                <Box  sx={{height:{lg:"50%",md:"50%",sm:"40%",xs:"30%"}}}>
                    <Box sx={{height:"100%"}}>
                      <img src={charkha} height={"100%"} width={"100%"}/>
                    </Box>
                 </Box>
-                <Box sx={{mt:{lg:"20px",md:"",sm:"15px",xs:""},display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"center",p:"5px"}}>
+                <Box sx={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                    
-                   <Box sx={{height:{lg:"130px",md:"130px",sm:"100px",xs:"100px"},width:{lg:"300px",md:"300px",sm:"200px",xs:"150px"},mt:"10px"}}>
+                   <Box sx={{height:{lg:"130px",md:"130px",sm:"100px",xs:"100px"},width:{lg:"300px",md:"300px",sm:"200px",xs:"150px"}}}>
                     <img src={vasu} style={{height:"100%",width:"100%"}}/>
                    </Box>
                 </Box>
@@ -163,7 +170,7 @@ function App() {
 
                   <Grid container sx={{mt:{lg:"20px",md:"15px",sm:"7px",xs:"7px"}}}>
 
-                    <Grid item xs={12} sm={12} md={8} lg={8} sx={{  zIndex: 999999 }}>
+                    <Grid item xs={12} sm={12} md={8} lg={8} sx={{  zIndex: 999999}}>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
                           <Typography sx={{ fontSize: { lg: "22px", md: "19px", sm: "16px", xs: "13px" }, color: "black", fontWeight: "700" }}>
                             दिनांक -
@@ -178,7 +185,7 @@ function App() {
                           </Box>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4} sx={{ display: "flex", justifyContent:{ lg:"center",md:"center",sm:"left",xs:"left"}, zIndex: 999999 }}>
+                    <Grid item xs={12} sm={12} md={4} lg={4} sx={{ display: "flex", justifyContent:{ lg:"center",md:"center",sm:"left",xs:"left"}, zIndex: 999999,mt:{lg:"0px",md:"0px",sm:"10px",xs:"10px"} }}>
                       <Box>
                           <Typography  sx={{ fontSize: { lg: "22px", md: "19px", sm: "16px", xs: "13px" }, color: "black", whiteSpace: "nowrap", fontWeight: "700" }}>
                             वैध है
